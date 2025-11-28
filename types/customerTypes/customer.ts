@@ -5,6 +5,6 @@ export interface Customer {
   mobile: string;
   address?: string;
   registered: string;
-  deleted?: string;
+  deleted?: string | null;
   modified?: string;
 }

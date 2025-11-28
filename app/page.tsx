@@ -1,6 +1,7 @@
 // app/page.tsx
 import DashboardLayout from "../components/DashboardLayout";
 import { Card, Text } from "@mantine/core";
+import { Modal } from "@mantine/core";
 
 export default function Page() {
   return (

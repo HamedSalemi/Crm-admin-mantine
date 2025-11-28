@@ -1,6 +1,10 @@
+// app/layout.tsx یا RootLayout.tsx
 import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css'; // حتما اضافه شود
 import '@fontsource/vazirmatn';
-import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
+import { MantineProvider, ColorSchemeScript, mantineHtmlProps } from '@mantine/core';
+import { ModalsProvider } from '@mantine/modals';
+import { Notifications } from '@mantine/notifications';
 import { theme } from '../theme';
 
 export const metadata = {
@@ -8,7 +12,7 @@ export const metadata = {
   description: 'I am using Mantine with Next.js!',
 };
 
-export default function RootLayout({ children }: { children: any }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fa" dir="rtl" {...mantineHtmlProps}>
       <head>
@@ -20,9 +24,11 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>
-          {children}
-          
+        <MantineProvider theme={theme} >
+          <ModalsProvider>
+            <Notifications /> {/* این خط مهمه */}
+            {children}
+          </ModalsProvider>
         </MantineProvider>
       </body>
     </html>

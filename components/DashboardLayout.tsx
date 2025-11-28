@@ -5,7 +5,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
-import CustomerPage from "@/app/customer/CustomerPage";
+import CustomerPage from "@/app/customers/customerPage";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const [opened, { toggle, close }] = useDisclosure(false);
